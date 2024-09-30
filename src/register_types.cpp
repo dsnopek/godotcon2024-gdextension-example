@@ -6,6 +6,7 @@
 
 #include "summator.h"
 #include "traffic_light.h"
+#include "my_player.h"
 
 using namespace godot;
 
@@ -18,6 +19,7 @@ void initialize_gdextension_types(ModuleInitializationLevel p_level)
 
 	GDREGISTER_CLASS(Summator);
 	GDREGISTER_CLASS(TrafficLight);
+	GDREGISTER_RUNTIME_CLASS(MyPlayer);
 }
 
 void uninitialize_gdextension_types(ModuleInitializationLevel p_level) {
