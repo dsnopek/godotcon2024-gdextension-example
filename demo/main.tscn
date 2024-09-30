@@ -1,6 +1,33 @@
-[gd_scene load_steps=2 format=3 uid="uid://bpvxekpop4f2f"]
+[gd_scene load_steps=6 format=3 uid="uid://bpvxekpop4f2f"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_gphrt"]
+[ext_resource type="Texture2D" uid="uid://ds7enpv0iapm" path="res://assets/stop.png" id="2_pn00c"]
+[ext_resource type="Texture2D" uid="uid://dypv2gn0kclbs" path="res://assets/go.png" id="3_r2404"]
+[ext_resource type="Texture2D" uid="uid://bt8026wt7sru6" path="res://assets/caution.png" id="4_aose2"]
+[ext_resource type="Script" path="res://traffic_light.gd" id="5_8iwb0"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_gphrt")
+
+[node name="TrafficLight" type="TrafficLight" parent="."]
+stop_texture = ExtResource("2_pn00c")
+go_texture = ExtResource("3_r2404")
+caution_texture = ExtResource("4_aose2")
+light = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_8iwb0")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 486.0
+offset_top = 59.0
+offset_right = 531.0
+offset_bottom = 90.0
+text = "Next
+"
+
+[connection signal="light_changed" from="TrafficLight" to="." method="_on_traffic_light_light_changed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

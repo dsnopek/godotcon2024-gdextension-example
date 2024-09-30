@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="TrafficLight" inherits="Control" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+		It's a traffic light!
+	</brief_description>
+	<description>
+		It's a traffic light!
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="_get_next_light" qualifiers="virtual const">
+			<return type="int" enum="TrafficLightType" />
+			<param index="0" name="" type="int" enum="TrafficLightType" />
+			<description>
+			</description>
+		</method>
+		<method name="show_next_light">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+	</methods>
+	<members>
+		<member name="caution_texture" type="Texture2D" setter="set_caution_texture" getter="get_caution_texture">
+		</member>
+		<member name="go_texture" type="Texture2D" setter="set_go_texture" getter="get_go_texture">
+		</member>
+		<member name="light" type="int" setter="set_light" getter="get_light" enum="TrafficLightType" default="2">
+		</member>
+		<member name="stop_texture" type="Texture2D" setter="set_stop_texture" getter="get_stop_texture">
+		</member>
+	</members>
+	<signals>
+		<signal name="light_changed">
+			<param index="0" name="next_light" type="int" />
+			<description>
+			</description>
+		</signal>
+	</signals>
+	<constants>
+		<constant name="TRAFFIC_LIGHT_GO" value="0" enum="TrafficLightType">
+		</constant>
+		<constant name="TRAFFIC_LIGHT_STOP" value="1" enum="TrafficLightType">
+		</constant>
+		<constant name="TRAFFIC_LIGHT_CAUTION" value="2" enum="TrafficLightType">
+		</constant>
+	</constants>
+</class>
